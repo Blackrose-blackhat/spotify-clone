@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/constants/custom_text.dart';
+import 'package:spotify_clone/constants/custom_button.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -15,7 +18,7 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(18.0),
         child: SafeArea(
           child: Center(
             child: Column(
@@ -23,14 +26,19 @@ class _AuthScreenState extends State<AuthScreen> {
               children: [
                 Image.asset(
                   'assets/images/spotify-logo.png',
-                  width: 120,
+                  width: 100,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text('Spotify'),
+                const Text(
+                  'Spotify',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 CustomTextField(
                   label: 'username',
@@ -57,6 +65,16 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
+                CustomButton(
+                  onTap: () {},
+                  text: const Text('SignUp'),
+                ),
+                const SizedBox(
+                  height: 13,
+                )
               ],
             ),
           ),
