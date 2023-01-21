@@ -27,9 +27,23 @@ class _AuthScreenState extends State<AuthScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/images/spotify-logo.png',
-                    width: 100,
+                  Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xFF17161b),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 116, 115, 115),
+                          offset: Offset(-5, -5),
+                          blurRadius: 15,
+                          spreadRadius: 0,
+                        ),
+                      ],
+                    ),
+                    child: Image.asset(
+                      'assets/images/spotify-logo.png',
+                      width: 100,
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
