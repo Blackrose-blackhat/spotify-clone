@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:spotify_clone/constants/custom_text.dart';
 import 'package:spotify_clone/constants/custom_button.dart';
+import 'package:spotify_clone/constants/social_media_button.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -21,61 +23,76 @@ class _AuthScreenState extends State<AuthScreen> {
         padding: const EdgeInsets.all(18.0),
         child: SafeArea(
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/images/spotify-logo.png',
-                  width: 100,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text(
-                  'Spotify',
-                  style: TextStyle(
-                    fontSize: 20,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/spotify-logo.png',
+                    width: 100,
                   ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                CustomTextField(
-                  label: 'username',
-                  controller: _usernamecontroller,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomTextField(
-                  label: 'Password',
-                  controller: _passwordcontroller,
-                ),
-                const SizedBox(
-                  height: 13,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 190),
-                  child: Text(
-                    'Forgot Password ?',
-                    textAlign: TextAlign.right,
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    'Spotify',
                     style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white54,
+                      fontSize: 20,
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomButton(
-                  onTap: () {},
-                  text: const Text('SignUp'),
-                ),
-                const SizedBox(
-                  height: 13,
-                )
-              ],
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  CustomTextField(
+                    label: 'username',
+                    controller: _usernamecontroller,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextField(
+                    label: 'Password',
+                    controller: _passwordcontroller,
+                  ),
+                  const SizedBox(
+                    height: 13,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 190),
+                    child: Text(
+                      'Forgot Password ?',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white54,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomButton(
+                    onTap: () {},
+                    text: const Text('SignUp'),
+                  ),
+                  const SizedBox(
+                    height: 13,
+                  ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      SocialButtons(text: 'f'),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      SocialButtons(text: 'G'),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
