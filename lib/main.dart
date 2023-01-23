@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/auth.dart';
+import 'package:spotify_clone/auth/screens/login.dart';
+import 'package:spotify_clone/auth/screens/signup.dart';
 
 void main() {
   runApp(const AuthenticationPage());
@@ -20,7 +21,7 @@ class AuthenticationPage extends StatelessWidget {
         ),
         primarySwatch: Colors.green,
       ),
-      home: const AuthScreen(),
+      home: const SignUp(),
     );
   }
 }

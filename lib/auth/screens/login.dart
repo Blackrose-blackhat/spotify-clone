@@ -1,12 +1,12 @@
 import 'dart:ui';
-
+import 'package:spotify_clone/constants/logo.dart';
 import 'package:flutter/material.dart';
-import 'package:social_login_buttons/social_login_buttons.dart';
+
 import 'package:spotify_clone/constants/custom_text.dart';
 import 'package:spotify_clone/constants/custom_button.dart';
-import 'package:spotify_clone/constants/social_media_button.dart';
 
 class AuthScreen extends StatefulWidget {
+  static const String routeName = '/login-screen';
   const AuthScreen({super.key});
 
   @override
@@ -87,7 +87,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                   CustomButton(
                     onTap: () {},
-                    text: const Text('SignUp'),
+                    text: const Text('Login'),
                   ),
                   const SizedBox(
                     height: 13,
@@ -95,16 +95,6 @@ class _AuthScreenState extends State<AuthScreen> {
                   const SizedBox(
                     height: 18,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      SocialButtons(text: 'f'),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      SocialButtons(text: 'G'),
-                    ],
-                  )
                 ],
               ),
             ),
