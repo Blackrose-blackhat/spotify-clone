@@ -87,7 +87,9 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                   CustomButton(
                     onTap: () {},
-                    text: const Text('Login'),
+                    text: 'Login',
+                    height: 50,
+                    width: double.infinity,
                   ),
                   const SizedBox(
                     height: 13,

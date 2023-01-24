@@ -21,7 +21,7 @@ class AuthenticationPage extends StatelessWidget {
         ),
         primarySwatch: Colors.green,
       ),
-      home: const SignUp(),
+      home: const AuthScreen(),
     );
   }
 }

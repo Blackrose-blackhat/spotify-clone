@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:spotify_clone/constants/calenda_text.dart';
+import 'package:spotify_clone/constants/custom_button.dart';
 import 'package:spotify_clone/constants/custom_text.dart';
 import 'package:spotify_clone/constants/logo.dart';
 
@@ -11,16 +14,10 @@ class SignUp extends StatefulWidget {
   State<SignUp> createState() => _SignUpState();
 }
 
-enum GenderChose {
-  male,
-  female,
-}
-
 class _SignUpState extends State<SignUp> {
   final TextEditingController _emailcontroller = TextEditingController();
   final TextEditingController _passwordcontroller = TextEditingController();
   final TextEditingController _usernamecontroller = TextEditingController();
-  GenderChose? _genderChose = GenderChose.male;
 
   @override
   Widget build(BuildContext context) {
@@ -64,46 +61,33 @@ class _SignUpState extends State<SignUp> {
                       label: '    Password',
                       controller: _passwordcontroller,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Text(
-                          'Date Of Birth:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.green,
-                          ),
-                        ),
-                        CalendarText(
-                          label: 'DD',
-                        ),
-                        CalendarText(
-                          label: 'MM',
-                        ),
-                        CalendarText(
-                          label: 'YY',
-                        ),
-                        Row(
-                          children: <Widget>[
-                            ListTile(
-                              title: const Text('Lafayette'),
-                              leading: Radio<GenderChose>(
-                                value: GenderChose.male,
-                                groupValue: _genderChose,
-                                onChanged: (GenderChose? value) {
-                                  setState(() {
-                                    _genderChose = value;
-                                  });
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomButton(
+                onTap: () {},
+                text: 'Signup',
+                height: 50,
+                width: 320,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text('OR',
+                  style: GoogleFonts.nunito(
+                    fontSize: 12,
+                  )),
+              const SizedBox(
+                height: 30,
+              ),
+              SocialLoginButton(
+                buttonType: SocialLoginButtonType.google,
+                width: 320,
+                borderRadius: 32,
+                onPressed: () {},
               )
             ],
           ),
